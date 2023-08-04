@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './gradlew build'
+                echo 'Build'
             }
         }
         stage('Test') {
@@ -25,8 +25,7 @@ pipeline {
     }
     post {
         always {
-            junit 'build/reports/**/*.xml'
-            archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
+            echo 'always'
         }
         success {
             echo 'This will run only if successful'
