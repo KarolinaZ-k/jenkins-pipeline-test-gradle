@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'set'
+                sh './gradlew build'
             }
         }
         stage('Test') {
@@ -13,12 +13,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                retry(1) {
+                retry(3) {
                     echo 'Deploy pary retry 1 times"'
-                }
-
-                timeout(time: 1, unit: 'MINUTES') {
-                    echo 'timeout 1 minute'
                 }
             }
         }
@@ -26,6 +22,7 @@ pipeline {
     post {
             always {
                 junit 'build/reports/**/*.xml'
+                archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
             }
             success {
                 echo 'This will run only if successful'
