@@ -3,9 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                withGradle {
-                    sh 'gradle bootJar distZip'
-                }
+                sh './gradlew build'
             }
         }
         stage('Test') {
