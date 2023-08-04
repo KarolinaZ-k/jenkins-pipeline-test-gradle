@@ -1,5 +1,11 @@
 pipeline {
-    agent any
+    agent { label 'lin' }
+
+    options {
+            timeout(time: 10, unit: 'MINUTES')
+            disableConcurrentBuilds()
+        }
+
     stages {
         stage('Build') {
             steps {
