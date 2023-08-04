@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'lin' }
+    agent any
 
     options {
             timeout(time: 10, unit: 'MINUTES')
