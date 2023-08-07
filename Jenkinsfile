@@ -11,7 +11,7 @@ pipeline {
         }
 
     stages {
-        stage('Examlpe') {
+        stage('Example') {
             steps {
                 bat 'gradle --version'
             }
@@ -24,6 +24,16 @@ pipeline {
                   }
             }
         }
+        stage('Test & Analyse') {
+                    steps {
+                        echo 'Testing..'
+                        wrap([$class: 'Xvfb']) {
+                            withGradle {
+                                bash 'gradle check --continue'
+                            }
+                        }
+                    }
+                }
         stage('Test') {
             steps {
                 echo '"Fail!"; exit 1'
