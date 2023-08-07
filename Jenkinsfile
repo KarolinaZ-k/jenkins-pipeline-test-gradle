@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Test & Analyse') {
                     steps {
-                        bash 'gradle check --continue'
+                        bat 'gradle check --continue'
                     }
                 }
         stage('Test') {
