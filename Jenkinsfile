@@ -20,18 +20,13 @@ pipeline {
             steps {
                 echo 'Build'
                 withGradle {
-                    bat 'gradle init'
+                    bat 'gradle build'
                   }
             }
         }
         stage('Test & Analyse') {
                     steps {
-                        echo 'Testing..'
-                        wrap([$class: 'Xvfb']) {
-                            withGradle {
-                                bash 'gradle check --continue'
-                            }
-                        }
+                        bash 'gradle check --continue'
                     }
                 }
         stage('Test') {
