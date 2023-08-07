@@ -15,15 +15,8 @@ pipeline {
             steps {
                 echo 'Build'
                 withGradle {
-                    bat 'gradle build'
+                    bat './gradlew build'
                   }
-            }
-        }
-        stage('Test & Analyse') {
-            steps {
-                withGradle {
-                  bat './gradlew test'
-                }
             }
         }
         stage('Test') {
