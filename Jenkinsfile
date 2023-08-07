@@ -21,7 +21,9 @@ pipeline {
         }
         stage('Test & Analyse') {
                     steps {
-                        bat 'gradle test'
+                        withGradle {
+                          sh './gradlew test'
+                        }
                     }
                 }
         stage('Test') {
