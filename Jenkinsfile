@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+            gradle 'Gradle 8.2.1'
+        }
+
     options {
             timeout(time: 10, unit: 'MINUTES')
             disableConcurrentBuilds()
