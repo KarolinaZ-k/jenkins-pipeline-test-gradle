@@ -9,14 +9,14 @@ pipeline {
     stages {
         stage('Examlpe') {
             steps {
-                sh 'gradle --version'
+                bat 'gradle --version'
             }
         }
         stage('Build') {
             steps {
                 echo 'Build'
                 withGradle {
-                    sh './gradlew build'
+                    bat './gradlew build'
                   }
             }
         }
