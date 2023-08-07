@@ -22,7 +22,7 @@ pipeline {
         stage('Test & Analyse') {
                     steps {
                         withGradle {
-                          sh './gradlew test'
+                          bat './gradlew test'
                         }
                     }
                 }
