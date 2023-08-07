@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-            gradle 'Gradle 8.2.1'
+            gradle '8.2.1'
         }
 
     options {
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 echo 'Build'
                 withGradle {
-                    bat 'gradle build'
+                    bat 'gradle init'
                   }
             }
         }
