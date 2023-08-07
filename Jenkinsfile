@@ -11,11 +11,6 @@ pipeline {
         }
 
     stages {
-        stage('Example') {
-            steps {
-                bat 'gradle --version'
-            }
-        }
         stage('Build') {
             steps {
                 echo 'Build'
@@ -26,7 +21,7 @@ pipeline {
         }
         stage('Test & Analyse') {
                     steps {
-                        bat 'gradle check --continue'
+                        bat 'gradle test'
                     }
                 }
         stage('Test') {
