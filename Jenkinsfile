@@ -15,10 +15,18 @@ pipeline {
             steps {
                 echo 'Build'
                 withGradle {
-                    bat './gradlew build --status'
+                    bat './gradlew build'
                   }
             }
         }
+        stage('Testsssss') {
+                    steps {
+                        echo 'Testing...'
+                        withGradle {
+                            bat './gradlew test'
+                          }
+                    }
+                }
         stage('Test') {
             steps {
                 echo '"Fail!"; exit 1'
