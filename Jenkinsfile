@@ -19,6 +19,13 @@ pipeline {
                   }
             }
         }
+        stage('Test & Analyse') {
+            steps {
+                withGradle {
+                  bat './gradlew test'
+                }
+            }
+        }
         stage('Test') {
             steps {
                 echo '"Fail!"; exit 1'
