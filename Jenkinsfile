@@ -11,21 +11,11 @@ pipeline {
         }
 
     stages {
-            stage('Test & Analyse') {
-                steps {
-                    echo 'Testing..'
-                    wrap([$class: 'Xvfb']) {
-                        withGradle {
-                            bat 'gradle check --continue'
-                        }
-                    }
-                }
-            }
         stage('Build') {
             steps {
                 echo 'Build'
                 withGradle {
-                    bat './gradlew build'
+                    bat 'gradle build'
                   }
             }
         }
