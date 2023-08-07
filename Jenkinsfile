@@ -7,6 +7,11 @@ pipeline {
         }
 
     stages {
+        stage('Examlpe') {
+            steps {
+                sh 'gradle --version'
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Build'
