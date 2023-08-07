@@ -23,7 +23,7 @@ pipeline {
                     steps {
                         echo 'Testing...'
                         withGradle {
-                            bat './gradlew test'
+                            bat 'gradle check --continue'
                           }
                     }
                 }
