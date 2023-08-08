@@ -28,16 +28,11 @@ pipeline {
             }
         }
         stage('Test') {
-                    steps {
-                        echo 'Testing...'
-                        withGradle {
-                            sh 'gradle test'
-                          }
-                    }
-                }
-        stage('Test') {
             steps {
-                echo '"Fail!"; exit 1'
+                echo 'Testing...'
+                withGradle {
+                    sh 'gradle test'
+                  }
             }
         }
         stage('Deploy') {

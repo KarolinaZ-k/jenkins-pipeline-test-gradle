@@ -12,12 +12,13 @@ public class App {
     }
 
     public static void main(String[] args) {
+        RandomMethods randomMethods = new RandomMethods();
         System.out.println(new App().getGreeting());
 
 
         int i=0;
         if(false){
-
+            randomMethods.add();
         }
     }
 }
