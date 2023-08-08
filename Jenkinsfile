@@ -23,7 +23,7 @@ pipeline {
             steps {
                 echo 'Testing...'
                 withGradle {
-                    bat 'gradle verification'
+                    bat 'gradle bootJar distZip'
                   }
             }
         }
