@@ -20,13 +20,13 @@ pipeline {
             }
         }
         stage('Testsssss') {
-            steps {
-                echo 'Testing...'
-                withGradle {
-                    bat 'gradle bootJar distZip'
-                  }
-            }
-        }
+                    steps {
+                        echo 'Testing...'
+                        withGradle {
+                            bat 'gradle test'
+                          }
+                    }
+                }
         stage('Test') {
             steps {
                 echo '"Fail!"; exit 1'
