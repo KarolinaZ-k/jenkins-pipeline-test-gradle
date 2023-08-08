@@ -12,9 +12,9 @@ class DemoApplicationTests {
 	void contextLoads() {
 	}
 
-	@Test
-	void failedTest(){
-		assertTrue(false);
-	}
+//	@Test
+//	void failedTest(){
+//		assertTrue(false);
+//	}
 
 }
