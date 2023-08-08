@@ -13,11 +13,8 @@ pipeline {
     stages {
         stage('Test & Analyse') {
             steps {
-                echo 'Testing..'
-                wrap([$class: 'Xvfb']) {
-                    withGradle {
-                        sh 'gradle check --continue'
-                    }
+                withGradle {
+                    sh 'gradle check --continue'
                 }
             }
         }
