@@ -14,7 +14,7 @@ pipeline {
         stage('Test & Analyse') {
             steps {
                 withGradle {
-                    sh 'gradle check --continue'
+                    bat 'gradle check --continue'
                 }
             }
         }
