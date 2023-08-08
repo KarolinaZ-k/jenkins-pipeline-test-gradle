@@ -23,7 +23,7 @@ pipeline {
                     steps {
                         echo 'Build'
                         withGradle {
-                            bat 'gradle clean'
+                            bat 'gradle tasks'
                           }
                     }
                 }
