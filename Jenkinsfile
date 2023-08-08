@@ -15,7 +15,7 @@ pipeline {
             steps {
             echo 'Test & Analyse'
                 withGradle {
-                    bat 'gradle check'
+                    sh 'gradle check'
                 }
             }
         }
@@ -23,7 +23,7 @@ pipeline {
             steps {
                 echo 'Build'
                 withGradle {
-                    bat 'gradle build'
+                    sh 'gradle build'
                   }
             }
         }
@@ -31,7 +31,7 @@ pipeline {
                     steps {
                         echo 'Testing...'
                         withGradle {
-                            bat 'gradle test'
+                            sh 'gradle test'
                           }
                     }
                 }
