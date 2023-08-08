@@ -19,19 +19,11 @@ pipeline {
                   }
             }
         }
-        stage('Clean') {
-                    steps {
-                        echo 'Build'
-                        withGradle {
-                            bat 'gradle tasks'
-                          }
-                    }
-                }
         stage('Testsssss') {
                     steps {
                         echo 'Testing...'
                         withGradle {
-                            bat 'gradle test'
+                            bat 'gradle test --tests'
                           }
                     }
                 }
