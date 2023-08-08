@@ -13,8 +13,9 @@ pipeline {
     stages {
         stage('Test & Analyse') {
             steps {
+            echo 'Test & Analyse'
                 withGradle {
-                    bat 'gradle check --continue'
+                    bat 'gradle check'
                 }
             }
         }
