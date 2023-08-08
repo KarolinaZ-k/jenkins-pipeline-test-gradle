@@ -11,7 +11,7 @@ pipeline {
         }
 
     stages {
-        stage('Test & Analyse') {
+        stage('Test & Analyse - check') {
             steps {
             echo 'Test & Analyse'
                 withGradle {
@@ -27,7 +27,7 @@ pipeline {
                   }
             }
         }
-        stage('Testsssss') {
+        stage('Test') {
                     steps {
                         echo 'Testing...'
                         withGradle {
