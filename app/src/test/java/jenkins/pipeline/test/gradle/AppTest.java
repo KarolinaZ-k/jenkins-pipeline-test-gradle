@@ -13,7 +13,7 @@ public class AppTest {
     }
 
 //    @Test
-//    void failedTest(){
+//    public void failedTest(){
 //        assertTrue(false);
 //    }
 }
