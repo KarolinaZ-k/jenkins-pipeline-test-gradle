@@ -19,6 +19,14 @@ pipeline {
                   }
             }
         }
+        stage('Clean') {
+                    steps {
+                        echo 'Build'
+                        withGradle {
+                            bat 'gradle clean'
+                          }
+                    }
+                }
         stage('Testsssss') {
                     steps {
                         echo 'Testing...'
