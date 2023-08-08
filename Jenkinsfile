@@ -20,14 +20,13 @@ pipeline {
             }
         }
         stage('Testsssss') {
-                    steps {
-                        echo 'Testing...'
-                        withGradle {
-                            bat 'cd .\demo\demo'
-                            bat './gradlew test'
-                          }
-                    }
-                }
+            steps {
+                echo 'Testing...'
+                withGradle {
+                    bat 'gradle test'
+                  }
+            }
+        }
         stage('Test') {
             steps {
                 echo '"Fail!"; exit 1'
