@@ -2,7 +2,8 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
     id 'jacoco' //calculate code coverage
-    id 'pmd'    //
+    id 'pmd'    //performs quality checks on  project
+    id 'checkstyle'
 }
 
 repositories {
@@ -31,7 +32,7 @@ application {
 }
 
 test {
-    finalizedBy jacocoTestReport // report is always generated after tests run
+    finalizedBy jacocoTestReport
 }
 
 check.dependsOn(jacocoTestCoverageVerification)
@@ -47,7 +48,19 @@ jacocoTestCoverageVerification {
 }
 
 pmd {
-    ignoreFailures = false
+    rulesMinimumPriority = 5
     consoleOutput = true
     toolVersion = "6.21.0"
+}
+
+checkstyle {
+    maxWarnings = 0
+    ignoreFailures false
+}
+
+tasks.withType(Checkstyle) {
+    reports {
+        xml.required = true
+        html.required = true
+    }
 }

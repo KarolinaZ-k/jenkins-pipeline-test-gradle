@@ -1,7 +1,9 @@
 package jenkins.pipeline.test.gradle;
 
 public class RandomMethods {
+    int b=7;
+
     public int add(){
-        return 4+5;
+        return b+5;
     }
 }

@@ -1,0 +1,60 @@
+<!DOCTYPE module PUBLIC
+        "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+        "https://checkstyle.org/dtds/configuration_1_3.dtd">
+<module name="Checker">
+    <module name="JavadocPackage"/>
+    <module name="TreeWalker">
+        <module name="ConstantName"/>
+        <module name="EmptyBlock"/>
+        <module name="EmptyCatchBlock"/>
+        <module name="LeftCurly"/>
+        <module name="HideUtilityClassConstructor"/>
+        <module name="MutableException"/>
+        <module name="VisibilityModifier"/>
+        <module name="FinalClass"/>
+        <module name="DefaultComesLast"/>
+        <module name="IllegalCatch"/>
+        <module name="MissingSwitchDefault"/>
+        <module name="MultipleStringLiterals">
+            <property name="allowedDuplicates" value="2"/>
+        </module>
+        <module name="MultipleVariableDeclarations"/>
+        <module name="NoArrayTrailingComma"/>
+        <module name="NoEnumTrailingComma"/>
+        <module name="OneStatementPerLine"/>
+        <module name="SimplifyBooleanExpression"/>
+        <module name="SimplifyBooleanReturn"/>
+        <module name="StringLiteralEquality"/>
+        <module name="UnnecessarySemicolonAfterTypeMemberDeclaration"/>
+        <module name="UnnecessarySemicolonInEnumeration"/>
+        <module name="UnnecessarySemicolonInTryWithResources"/>
+        <module name="UnusedLocalVariable"/>
+        <module name="UnusedImports"/>
+        <module name="NoCodeInFile"/>
+        <module name="OuterTypeFilename"/>
+        <module name="TrailingComment"/>
+        <module name="AbstractClassName">
+            <property name="ignoreName" value="true"/>
+        </module>
+        <module name="ConstantName"/>
+        <module name="IllegalIdentifierName"/>
+        <module name="InterfaceTypeParameterName"/>
+        <module name="LambdaParameterName"/>
+        <module name="LocalVariableName"/>
+        <module name="MemberName"/>
+        <module name="MethodName"/>
+        <module name="PackageName"/>
+        <module name="ParameterName"/>
+        <module name="PatternVariableName"/>
+        <module name="RecordComponentName"/>
+        <module name="StaticVariableName"/>
+        <module name="TypeName"/>
+        <module name="MethodParamPad"/>
+        <module name="NoWhitespaceAfter"/>
+        <module name="NoWhitespaceBefore"/>
+        <module name="NoWhitespaceBeforeCaseDefaultColon"/>
+        <module name="ParenPad"/>
+        <module name="SingleSpaceSeparator"/>
+        <module name="TypecastParenPad"/>
+    </module>
+</module>
