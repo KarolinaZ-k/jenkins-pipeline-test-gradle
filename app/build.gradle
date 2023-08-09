@@ -47,7 +47,7 @@ jacocoTestCoverageVerification {
 }
 
 pmd {
-    //consoleOutput = true
+    ignoreFailures = false
+    consoleOutput = true
     toolVersion = "6.21.0"
-    rulesMinimumPriority = 5
 }
