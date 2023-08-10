@@ -45,9 +45,7 @@ pipeline {
         when { equals expected: true, actual: Deploy }
             steps {
                 echo 'Deploying...'
-                script {
 
-                }
             }
         }
     }
