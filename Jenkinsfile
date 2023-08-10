@@ -17,7 +17,7 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Test & Analyse - check') {
+        stage('Test & Analyse') {
             steps {
             echo 'Test & Analyse'
                 withGradle {
@@ -33,18 +33,10 @@ pipeline {
                   }
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing...'
-                withGradle {
-                    sh 'gradle test'
-                  }
-            }
-        }
         stage('Deploy') {
         when {
                     expression {
-                        return Deploy
+                        return true
                     }
                 }
             steps {
