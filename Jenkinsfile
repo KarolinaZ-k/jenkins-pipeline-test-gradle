@@ -42,7 +42,11 @@ pipeline {
             }
         }
         stage('Deploy') {
-        when { equals expected: true, actual: Deploy }
+        when {
+                    expression {
+                        return Deploy
+                    }
+                }
             steps {
                 echo 'Deploying...'
 
