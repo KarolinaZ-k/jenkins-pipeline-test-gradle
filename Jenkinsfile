@@ -34,11 +34,12 @@ pipeline {
             }
         }
         stage('Deploy') {
+                when(env.BRANCH_NAME != 'main'){
 
+                }
                 steps {
                     echo 'Deploying...'
-                    when(env.BRANCH_NAME != 'main'){
-                    }
+
                     script {
                         if (env.BRANCH_NAME == 'main') {
                             echo 'Main'
