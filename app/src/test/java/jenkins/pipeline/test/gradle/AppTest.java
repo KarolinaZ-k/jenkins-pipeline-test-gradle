@@ -20,4 +20,11 @@ public class AppTest {
 //    public void failedTest(){
 //        assertTrue(false);
 //    }
+
+    @Test
+    public void testAddMethod(){
+        RandomMethods randomMethods = new RandomMethods();
+        assertEquals(12, randomMethods.add());
+    }
+
 }

@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+            docker { image 'node:18.17.0-alpine3.18' }
+        }
 
     tools {
             gradle '8.2.1'

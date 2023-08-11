@@ -2,7 +2,7 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
     id 'jacoco' //calculate code coverage
-    //id 'pmd'    //performs quality checks on  project
+    //id 'pmd'
     //id 'checkstyle'
 }
 
@@ -41,7 +41,7 @@ jacocoTestCoverageVerification {
     violationRules {
         rule {
             limit {
-                minimum = 0.17
+                minimum = 0.7
             }
         }
     }
