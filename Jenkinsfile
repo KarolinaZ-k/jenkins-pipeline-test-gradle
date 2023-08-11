@@ -12,18 +12,17 @@ pipeline {
         }
 
     stages {
-        stage('Main') {
-            agent {
-                label env.AGENT_TYPE
-            }
-            options {
-                timeout(time: 30, unit: 'MINUTES')
-            }
-            environment {
-                DOCKERHUB_ORGANISATION = "${infra.isTrusted() ? 'jenkins' : 'jenkins4eval'}"
-            }
-        }
+
         stage('Prepare Docker') {
+        agent {
+                        label env.AGENT_TYPE
+                    }
+                    options {
+                        timeout(time: 30, unit: 'MINUTES')
+                    }
+                    environment {
+                        DOCKERHUB_ORGANISATION = "${infra.isTrusted() ? 'jenkins' : 'jenkins4eval'}"
+                    }
             when {
                 environment name: 'AGENT_TYPE', value: 'linux'
             }
