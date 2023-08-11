@@ -7,9 +7,13 @@ pipeline {
         }
 
     options {
-            timeout(time: 10, unit: 'MINUTES')
-            disableConcurrentBuilds()
-        }
+        timeout(time: 10, unit: 'MINUTES')
+        disableConcurrentBuilds()
+    }
+
+    triggers {
+        pollSCM('H/4 * * * *') // polling for changes, here every fourth minute
+    }
 
     stages {
         stage('Checkout') {
@@ -55,10 +59,10 @@ pipeline {
             deleteDir()
         }
         success {
-            echo 'This will run only if successful'
+            echo 'SUCCESS'
         }
         failure {
-            echo 'This will run only if failed'
+            echo 'FAILED'
         }
     }
 }
