@@ -12,24 +12,6 @@ pipeline {
         }
 
     stages {
-
-        stage('Prepare Docker') {
-            agent {
-                label env.AGENT_TYPE
-            }
-            options {
-                timeout(time: 30, unit: 'MINUTES')
-            }
-            environment {
-                DOCKERHUB_ORGANISATION = "${infra.isTrusted() ? 'jenkins' : 'jenkins4eval'}"
-            }
-            steps {
-                sh '''
-                docker buildx create --use
-                docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
-                '''
-            }
-        }
         stage('Checkout') {
             steps {
                 echo 'Checkout.. ' + env.BRANCH_NAME
