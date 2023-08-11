@@ -14,17 +14,14 @@ pipeline {
     stages {
 
         stage('Prepare Docker') {
-        agent {
-                        label env.AGENT_TYPE
-                    }
-                    options {
-                        timeout(time: 30, unit: 'MINUTES')
-                    }
-                    environment {
-                        DOCKERHUB_ORGANISATION = "${infra.isTrusted() ? 'jenkins' : 'jenkins4eval'}"
-                    }
-            when {
-                environment name: 'AGENT_TYPE', value: 'linux'
+            agent {
+                label env.AGENT_TYPE
+            }
+            options {
+                timeout(time: 30, unit: 'MINUTES')
+            }
+            environment {
+                DOCKERHUB_ORGANISATION = "${infra.isTrusted() ? 'jenkins' : 'jenkins4eval'}"
             }
             steps {
                 sh '''
