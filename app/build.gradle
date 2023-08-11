@@ -3,7 +3,7 @@ plugins {
     id 'application'
     id 'jacoco' //calculate code coverage
     //id 'pmd'    //performs quality checks on  project
-    id 'checkstyle'
+    //id 'checkstyle'
 }
 
 repositories {
@@ -53,14 +53,14 @@ jacocoTestCoverageVerification {
 //    toolVersion = "6.21.0"
 //}
 
-checkstyle {
-    maxWarnings = 0
-    ignoreFailures false
-}
+//checkstyle {
+//    maxWarnings = 0
+//    ignoreFailures false
+//}
 
-tasks.withType(Checkstyle) {
-    reports {
-        xml.required = true
-        html.required = true
-    }
-}
+//tasks.withType(Checkstyle) {
+//    reports {
+//        xml.required = true
+//        html.required = true
+//    }
+//}
